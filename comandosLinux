@@ -1,0 +1,115 @@
+ver discos montados
+	# fdisk -l
+	# lsblk
+
+montar unidad en directorio
+	# mount /dev/sbd1 /destino
+
+bajar red
+	# ifconfig eth0 down
+
+modificar configuracion
+	# nano /etc/network/interfaces
+
+	# This file describes the network interfaces available on your system
+	# and how to activate them. For more information, see interfaces(5).
+
+	# The loopback network interface
+	auto lo
+	iface lo inet loopback
+
+	# The primary network interface
+	auto eth0
+	iface eth0 inet static
+	address 192.168.1.134
+	netmask 255.255.255.
+	gateway 192.168.1.1
+
+
+Pararlo y levantarlo completamente (recomendado):
+
+	# /etc/init.d/networking stop
+	# /etc/init.d/networking start
+
+Reiniciarlo
+
+	# /etc/init.d/networking restart
+
+Apagar y encender la interfaz afectada:
+
+	# ifdown eth0 && ifup eth0
+
+Editar servidores
+
+	# nano /etc/resolv.conf
+
+		nameserver 8.8.8.8
+		nameserver 8.8.4.4
+
+Eliminar carpeta
+	# rm -r carpeta
+
+copiar archivos 
+
+	# scp fichero root@ip:/direccion/destino
+
+apagar
+	# sudo shutdown -h now
+
+ver espacio en disco
+	# df -h
+
+cambiar hora y fecha sistema
+	# date --set "2014-01-28 15:00"
+
+buscar archivos y carpetas
+	# find . -type f -name tureceta*
+	# find . -type d -name tureceta*
+
+listar archivos y sus permisos 
+	# ls -lh
+
+cambiar propietario y grupo de archivos
+	# chown -R usuario:grupo directorio/
+
+buscar particiones y unidades
+	# fdisk -l
+
+montar la unidad 
+	# mount /dev/sdb1 /carpeta/carpeta (/media/)  
+
+montar unidad con definicion de tipo de archivo
+	#mount -t ntfs /dev/sdb1 /carpeta/carpeta
+
+desmontar
+	# umount /carpeta/carpeta
+
+saber el espacio usado en disco
+	# df -h
+
+saber el espacio ocupado de archivos
+	# du -h /direccion/carpeta
+
+	# du -bsh /fichero_o_carpeta
+
+copiar carpeta
+	# cp -r /origen/origen /destino/destino
+
+mover 
+	# mv /origen/origen	/destino/destino
+
+eliminar
+	# rm /origen/origen	
+
+
+permisos a archivos
+	# setfacl -R -m u:usuario:rwx /home/fulano
+
+obtener los permisos de cierto archivo o directorio
+	# getfacl /carpeta/carpeta
+
+para dejarlos predeterminados
+	# setfacl -d -m u:usuario:rwx /home/fulano
+
+conectarse a una basede datos mysql
+	# mysql -u usuario -h ip -p
