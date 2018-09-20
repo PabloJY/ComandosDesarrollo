@@ -113,7 +113,10 @@ para dejarlos predeterminados
 
 conectarse a una basede datos mysql
 	# mysql -u usuario -h ip -p
-	
+git valores
+	# git config --global user.name "John Doe"
+	# git config --global user.email johndoe@example.com
+
 conexion de git
 	# git init
 	# git add . (o en vez de punto solo el archivo que se quiere subir)
