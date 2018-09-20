@@ -113,3 +113,11 @@ para dejarlos predeterminados
 
 conectarse a una basede datos mysql
 	# mysql -u usuario -h ip -p
+	
+conexion de git
+	# git init
+	# git add . (o en vez de punto solo el archivo que se quiere subir)
+	# git commit -m "comentario del commit"
+	# git remote add origin https://direccion_del_repositorio.git (solo para la primera vez)
+	# git push -u origin master
+	# git status (verifica si aun hay archivos por subir o los cambios)
