@@ -9,3 +9,5 @@ conexion de git
 	# git remote add origin https://direccion_del_repositorio.git (solo para la primera vez)
 	# git push -u origin master
 	# git status (verifica si aun hay archivos por subir o los cambios)
+	
+	hola mundo
