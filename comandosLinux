@@ -124,3 +124,42 @@ conexion de git
 	# git remote add origin https://direccion_del_repositorio.git (solo para la primera vez)
 	# git push -u origin master
 	# git status (verifica si aun hay archivos por subir o los cambios)
+
+
+crear usuarios PostgreSQL>
+	root# su postgres
+	postgres# createuser -S -R -D -l cliente
+
+	ingreso
+		# cd
+		# psql
+
+	contrasenia:
+		postgres# ALTER USER cliente WITH ENCRYPTED PASSWORD 'contrasenia';
+	
+	usuarios creados:
+		select * from pg_shadow;
+
+	CREAR BD
+		# CREATE DATABASE pruebaplanp;
+
+	OTORGAR PRIVILEGIOS
+		# GRANT ALL PRIVILEGES ON DATABASE pruebaplanp TO cliente;
+
+	CREAR TABLAS
+		# CREATE TABLE usuarios (id VARCHAR(3), nombre VARCHAR(50));
+
+	SALIR DEL USUARIO
+		# \q
+		# exit
+
+	Ruta de archivo de configuracion
+		# nano /etc/postgresql/10/main/postgresql.conf
+			listen_addresses ='ip' (/'localhost'/'*')
+
+		# nano /etc/postgresql/10/main/pg_hba.conf
+			configuración de conexiones locales con IPv4 (IPv4 local connections) para reemplazar 127.0.0.1/32 por all
+
+	Reinicio del servicio postgreSql
+		# systemctl restart postgresql.service
+
